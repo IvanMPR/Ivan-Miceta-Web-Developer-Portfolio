@@ -631,4 +631,8 @@ footer {
   .section-other-contacts {
     width: 100%;
   }
+  /* Footer */
+  footer {
+    flex-direction: column;
+  }
 }
