@@ -3,7 +3,7 @@
 /* Play flip sound when emoji image is hovered */
 
 const emoji = document.querySelector('.logo-img-container');
-const flipSound = new Audio('sounds/369960__mischy__umblattern-kurz.wav');
+const flipSound = document.querySelector('.flip-sound');
 
 emoji.addEventListener('mouseover', () => {
   setTimeout(() => {
