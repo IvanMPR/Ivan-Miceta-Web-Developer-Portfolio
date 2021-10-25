@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+/*************************  General  ***********************************/
+
+:root {
+  --color-bgd: #0e141b;
+  --color-bgd-offset: #252526;
+  --color-text: #ffffff;
+  --color-text-offset: #818a91;
+  --color-border: #2d2d2d;
+  /* --color-primary: #ff5277; */
+  --color-primary: #ff335f;
+  /* --color-primary-offset: #ff2957; */
+  --color-primary-offset: #ff1447;
+  --color-secondary: #43a9a3;
+  --color-codewars: #b1361e;
+  --color-whatsapp: #25d366;
+  --color-viber: #8f5db7;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 2rem;
+  background: var(--color-bgd);
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+p {
+  color: var(--color-text);
+}
+
+/*************************  Utility classes ***********************************/
+
+.active {
+  /* border-bottom: 0.5rem solid var(--color-codewars) !important; */
+  border-bottom: 0.5rem solid var(--color-primary) !important;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 1rem 6rem;
+  border-radius: 10rem;
+  transition: background-color 0.2s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s backwards;
+}
+
+.move-from-left {
+  animation: moveInLeft 1s ease-out;
+}
+
+.move-from-right {
+  animation: moveInRight 1s ease-out;
+}
+
+.slideInElement {
+  /* animation: slideIn 0.4s ease-out; */
+  animation: moveInBottom 0.4s ease-out;
+}
+
+.ripple-btn {
+  animation: ripple 0.8s;
+}
+
+.hidden {
+  display: none;
+}
+.normal-font {
+  font-size: 1.6rem;
+}
+
+.l-font {
+  font-size: 2rem;
+}
+
+.xl-font {
+  font-size: 2.5rem;
+}
+
+.xxl-font {
+  font-size: 6rem;
+}
+
+.wrapper {
+  margin: 2rem 0;
+}
+
+.wrapper-l {
+  margin: 4rem 0;
+}
+.container {
+  padding: 1rem;
+  max-width: 120rem;
+  margin: auto;
+}
+
+.section {
+  /* background: thistle; */
+  width: 100%;
+  min-height: 48rem;
+}
+/* ///////////////////////////// */
+.scale-up {
+  animation: scaleUp 1s ease-out 1 forwards;
+}
+/* /////////////////////////////// */
+/*************************  Navbar Styling ***********************************/
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+/* Emoji and name - left part of the navbar */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+/* Parent container for two divs, that has different backgrounds, flipped on hover*/
+.logo-img-container {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 8rem;
+  height: 8rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: 0.25rem solid var(--color-primary);
+  outline-offset: 0.3rem;
+}
+
+/* Divs that rotates on hover, each with different bgd-image */
+.front-image,
+.back-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s;
+  backface-visibility: hidden;
+}
+
+/* Div with Emoji bgd */
+.front-image {
+  background: url(img/IvanEmojiCroped.png) no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Div with  real picture bgd*/
+.back-image {
+  background: url(img/Selfie.jpeg) no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.front-image:hover {
+  transform: rotateY(180deg);
+}
+
+.front-image:hover + .back-image {
+  transform: rotateY(0);
+}
+
+/* Span with name */
+.name {
+  margin: 0 0 0 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+/*** Middle part of the Navbar(bulbs)  ***/
+/* Parent container surrounding the bulb, rounded */
+.change-styles {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background: var(--color-bgd-offset);
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: grid;
+  place-content: center;
+}
+
+.change-styles:hover {
+  background: var(--color-border);
+}
+/* Position of the bulb inside of the parent */
+.fa-lightbulb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+/* This class is assigned to bulb i element when dark theme is applied */
+.light {
+  color: var(--color-text);
+}
+
+/***** Right part of the Navbar(ul with links) *****/
+
+.ul-nav-links {
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.ul-nav-links > :not(:last-child) {
+  margin-right: 2.5rem;
+}
+
+.ord-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  display: inline-block;
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5rem solid var(--color-bgd);
+  transition: border 0.25s;
+}
+
+.nav-link:hover {
+  border-bottom: 0.5rem solid var(--color-bgd-offset);
+}
+
+/*********************************** Modal Styling ******************************/
+
+.modal {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: var(--color-text);
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: scaleUp 1s ease-out 1 forwards;
+  z-index: 6;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 22%;
+  left: 34%;
+  color: var(--color-bgd);
+  font-size: 1.3rem;
+  animation: delayCloseModalBtnAppearance 1s;
+  transition: color 0.2s;
+  display: inline-block;
+  z-index: 7;
+}
+
+.close-modal-btn:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.menu {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: grid;
+  place-content: center;
+}
+
+.ul-nav-links-modal {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2rem 3rem;
+}
+
+.nav-link-modal {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5rem solid var(--color-text);
+  transition: border 0.25s;
+  color: var(--color-bgd);
+}
+
+.nav-link-modal:hover {
+  border-bottom: 0.5rem solid var(--color-bgd-offset);
+}
+
+.link-container-modal {
+  margin: 0.5rem 0;
+}
+
+.ord-number-modal {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+/*********************************  Main  ***************************************/
+
+#main {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-image-outer {
+  width: 48rem;
+  height: 48rem;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background-image: linear-gradient(#fff, #fff);
+  outline: 0.25rem solid var(--color-primary);
+  outline-offset: 1rem;
+  display: grid;
+  place-content: center;
+}
+
+.hero-image {
+  width: 48rem;
+  height: 48rem;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: url('img/bgremove_Selfie.jpeg') no-repeat center center/cover;
+}
+
+.hero-smalltitle {
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.btn-hero-contact {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+.btn-hero-contact:hover {
+  background: var(--color-primary-offset);
+}
+
+.wrapper-btn-hero-contact {
+  margin: 5rem 0 2rem 0;
+}
+
+/*******************************  Footer  ***************************************/
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.fa-github,
+.fa-linkedin {
+  color: var(--color-text);
+  margin-right: 2rem;
+}
+
+.usa-flag,
+.srb-flag {
+  margin: 0 1rem;
+  height: 2.5rem;
+  border-radius: 5%;
+}
+
+/******************************  Contact page  **************************************/
+/***********************************************************************************/
+.section-contact {
+  /* border: 1px solid var(--color-text); */
+  /* border-radius: 1rem; */
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.section-contact > :first-child {
+  margin-right: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--color-text);
+}
+
+.section-contact-form,
+.section-other-contacts {
+  width: 45%;
+}
+
+/* .section-other-contacts-location {
+  
+} */
+
+.input-label-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-label {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.contact-form-input {
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-btn {
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  /* text-transform: uppercase; */
+  background: var(--color-primary);
+  color: var(--color-text);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.form-btn:hover {
+  background: var(--color-primary-offset);
+}
+/* Right side of the contact page */
+/* .section-other-contacts {
+  
+} */
+.sub-section-other-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: var(--color-text-offset); */
+}
+
+.fa-at,
+.fa-phone,
+.fa-address-card {
+  color: var(--color-text);
+}
+
+.fa-whatsapp {
+  color: var(--color-whatsapp);
+}
+.fa-viber {
+  color: var(--color-viber);
+}
+
+/***********************************************************************************/
+/******************************  Keyframes  **************************************/
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: 0;
+  }
+  to {
+    transform: scale(4);
+  }
+}
+
+@keyframes slideIn {
+  0%,
+  60% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: 0;
+  }
+}
+
+@keyframes delayCloseModalBtnAppearance {
+  0%,
+  60% {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+/**********************************  Media Queries  *****************************/
+
+@media (max-width: 922px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navbar-middle {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .ul-nav-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: grid;
+    place-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--color-bgd-offset);
+  }
+
+  .navbar-hamburger:hover {
+    background: var(--color-border);
+  }
+
+  .fa-bars {
+    color: var(--color-text);
+    cursor: pointer;
+  }
+  /* Contact page */
+  .section-contact {
+    flex-direction: column;
+  }
+  .section-contact-form,
+  .section-other-contacts {
+    width: 100%;
+  }
+}
