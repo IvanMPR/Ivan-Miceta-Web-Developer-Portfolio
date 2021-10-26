@@ -125,6 +125,13 @@ p {
   max-width: 120rem;
   margin: auto;
 }
+.text-container {
+  padding: 1rem;
+  max-width: 72rem;
+  margin: auto;
+  line-height: 1.5;
+  text-align: justify;
+}
 
 .section {
   width: 100%;
@@ -138,6 +145,10 @@ p {
 
 .sub-heading {
   color: var(--color-text-offset);
+}
+
+.sub-heading-icon {
+  margin: 0 1rem;
 }
 /* ///////////////////////////// */
 .scale-up {
@@ -427,21 +438,61 @@ footer {
 }
 /******************************  Projects page  **************************************/
 /***********************************************************************************/
+/* .section-projects {
+} */
+
 .sub-heading-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.section-projects {
-  background: thistle;
-}
-.sub-heading-wrapper {
-  background: wheat;
-}
 .sub-heading {
-  /* background: var(--color-text-offset); */
-  padding: 1rem 3rem 3rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.sub-heading-active {
+  color: var(--color-text);
+}
+
+.section-grid-container {
+  width: 100%;
+  height: 100%;
+  /* background: yellow; */
+  display: grid;
+  place-content: center center;
+  /* margin-top: 5rem; */
+  /* row-gap: 10rem;
+  column-gap: 10rem; */
+  grid-template-columns: repeat(2, auto);
+  gap: 10rem;
+}
+.section-grid-individual {
+  /* background: yellow; */
+  border: 1px solid yellow;
+  width: 54rem;
+  height: 50rem;
+  position: relative;
+}
+
+.flagged-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: var(--color-primary);
+  color: var(--color-text);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transition: background 0.2s;
+}
+
+.flagged-content:hover {
+  background: var(--color-primary-offset);
 }
 
 /******************************  Contact page  **************************************/
