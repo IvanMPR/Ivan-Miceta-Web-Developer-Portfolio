@@ -59,19 +59,38 @@
     <h2 class="section-title wrapper xl-font">Contact me</h2>
     <section class="section container section-contact">
       <div class="section-contact-form">
-        <form class="form wrapper">
+        <form
+          action="https://formsubmit.co/ivsanmas@gmail.com"
+          method="POST"
+          class="form wrapper"
+        >
           <div class="form-name wrapper input-label-wrapper">
             <label class="contact-form-label normal-font" for="name"
               >Name</label
             >
-            <input type="text" class="contact-form-input l-font" />
+            <input
+              type="text"
+              name="name"
+              required
+              class="contact-form-input l-font"
+            />
           </div>
           <div class="form-email wrapper input-label-wrapper">
             <label class="contact-form-label normal-font" for="email"
               >Email</label
             >
-            <input type="email" class="contact-form-input l-font" />
+            <input
+              type="email"
+              name="email"
+              required
+              class="contact-form-input l-font"
+            />
           </div>
+          <input
+            type="hidden"
+            name="_next"
+            value="http://127.0.0.1:5500/pages/submit-thanks/thanks-default.html"
+          />
           <div class="form-textarea wrapper input-label-wrapper">
             <label class="contact-form-label normal-font" for="textarea"
               >Message</label
@@ -82,76 +101,13 @@
               cols="30"
               rows="8"
               class="contact-form-input l-font"
+              required
             ></textarea>
           </div>
           <div class="form-submit-btn wrapper">
             <button type="submit" class="form-btn normal-font">Submit</button>
           </div>
         </form>
-      </div>
-      <div class="section-other-contacts wrapper">
-        <div class="wrapper">
-          <div
-            class="
-              sub-section-other-contacts
-              section-other-contacts-email
-              wrapper
-            "
-          >
-            <span class="my-email-icon wrapper"
-              ><i class="fas fa-at fa-3x"></i
-            ></span>
-            <p class="my-email normal-font">ivsanmas@gmail.com</p>
-          </div>
-          <div
-            class="
-              sub-section-other-contacts
-              section-other-contacts-phone
-              wrapper
-            "
-          >
-            <span class="my-phone-icon wrapper"
-              ><i class="fas fa-phone fa-3x"></i
-            ></span>
-            <span class="my-whatsapp-icon wrapper"
-              ><i class="fab fa-whatsapp fa-3x"></i
-            ></span>
-            <span class="my-viber-icon wrapper"
-              ><i class="fab fa-viber fa-3x"></i
-            ></span>
-            <p class="my-phone normal-font">+381638349870</p>
-          </div>
-          <div
-            class="
-              sub-section-other-contacts
-              section-other-contacts-home
-              wrapper
-            "
-          >
-            <span class="my-home-icon wrapper"
-              ><i class="far fa-address-card fa-3x"></i
-            ></span>
-            <p class="my-home normal-font">
-              Nedeljka Cabrinovica 62, 11030 Belgrade, Serbia
-            </p>
-          </div>
-        </div>
-        <div
-          class="
-            sub-section-other-contacts
-            section-other-contacts-location
-            wrapper-l
-          "
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.3723432195134!2d20.41365171586201!3d44.77321388730226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a6e2ca246cb43%3A0x9bd95cb871bbdaff!2z0J3QtdC00LXRmdC60LAg0KfQsNCx0YDQuNC90L7QstC40ZvQsCA2Miwg0JHQtdC-0LPRgNCw0LQ!5e0!3m2!1ssr!2srs!4v1635156321325!5m2!1ssr!2srs"
-            width="100%"
-            height="200rem"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
       </div>
     </section>
 
