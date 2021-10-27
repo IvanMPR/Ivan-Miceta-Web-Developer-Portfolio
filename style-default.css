@@ -499,8 +499,8 @@ footer {
 /***********************************************************************************/
 .section-contact {
   display: flex;
-  align-items: top;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 5rem;
 }
 
@@ -508,9 +508,8 @@ footer {
   margin-right: 1rem;
 }
 
-.section-contact-form,
-.section-other-contacts {
-  width: 45%;
+.section-contact-form {
+  width: 50%;
 }
 
 .input-label-wrapper {
@@ -546,25 +545,18 @@ footer {
   background: var(--color-primary-offset);
 }
 
-.sub-section-other-contacts {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/****************************** Thank-you page (after form submit) ******************/
+/***********************************************************************************/
+.section-thanks {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
-.fa-at,
-.fa-phone,
-.fa-address-card {
-  color: var(--color-text);
+.thumbs-up {
+  color: var(--color-primary);
+  text-align: center;
+  display: block;
 }
-
-.fa-whatsapp {
-  color: var(--color-whatsapp);
-}
-.fa-viber {
-  color: var(--color-viber);
-}
-
 /***********************************************************************************/
 /******************************  Keyframes  **************************************/
 
