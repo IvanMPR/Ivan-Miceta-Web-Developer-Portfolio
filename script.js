@@ -132,7 +132,7 @@ buttons.forEach(button => {
 const submitBtn = document.querySelector('.form-btn');
 
 submitBtn.addEventListener('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   rippleButton(e, this);
 });
 function rippleButton(event, element) {
